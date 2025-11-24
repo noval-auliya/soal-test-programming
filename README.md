@@ -81,28 +81,32 @@ mempunyai tinggi lebih dari 40 lantai dan output dari query tersebut
     While) untuk memunculkan ouput sebagai berikut :
 
 ```
-a. *
+a.
+*
 **
 ***
 ****
 *****
 ```
 ```
-b. 5 4 3 2 1
+b.
+5 4 3 2 1
 5 4 3 2
 5 4 3
 5 4
 5
 ```
 ```
-c. 1
+c.
+1
 1 3
 1 3 5
 1 3 5 7
 1 3 5 7 9
 ```
 ```
-d. 3 2 1
+d.
+3 2 1
 3 2
 3
 3 2
@@ -121,190 +125,128 @@ e. 2 3 5 7 11
 
 1. a) Munculkan kota yang populasi penduduknya lebih dari 500 dan output dari
     query tersebut
-
+```
 SELECT name AS city, population
-
 FROM City
-
 WHERE population > 500;
+```
 
 1. b) Munculkan kota yang tidak mempunyai gedung dan output dari query
     tersebut
-
+```
 SELECT city.id, city.name AS kota, city.population
-
 FROM city
-
 LEFT JOIN building ON city.id = building.city_id
-
 WHERE building.id IS NULL;
+```
 
 1. c) Munculkan negara yang mempunyai kota dengan populasi kurang dari 500
     dan output dari query tersebut
-
+```
 SELECT DISTINCT country.id, country.name AS country
-
 FROM country
-
 JOIN city ON country.id = city.country_id
-
 WHERE city.population < 500;
-
+```
 
 1. d) Munculkan gedung yang terdapat di negara Indonesia dan Malaysia dan
     output dari query tersebut
-
-SELECT building.id, building.name AS building, city.name AS city, country.name
-AS country, building.floor
-
+```
+SELECT building.id, building.name AS building, city.name AS city, country.name AS country, building.floor
 FROM building
-
 JOIN city ON building.city_id = city.id
-
 JOIN country ON city.country_id = country.id
-
 WHERE country.name IN ('Indonesia','Malaysia');
+```
 
 1. e) Munculkan gedung yang terdapat di negara Indonesia dan Malaysia serta
     mempunyai tinggi lebih dari 40 lantai dan output dari query tersebut
-
-SELECT building.id, building.name AS building, city.name AS city, country.name
-AS country, building.floor
-
+```
+SELECT building.id, building.name AS building, city.name AS city, country.name AS country, building.floor
 FROM building
-
 JOIN city ON building.city_id = city.id
-
 JOIN country ON city.country_id = country.id
-
 WHERE country.name IN ('Indonesia','Malaysia') AND building.floor > 40;
+```
 
 2. a)
-
+```
 <?php
-
-for ($i= 1 ; $i <= 5 ; $i++) {
-
-for ($j= 1 ; $j <= $i; $j++) {
-
-echo "*";
-
-}
-
-echo "<br>";
-
-}
-
+    for ($i=1; $i <= 5; $i++) { 
+        for ($j=1; $j <= $i; $j++) { 
+            echo "*";
+        }
+        echo "<br>";
+    }
 ?>
-
+```
 
 2. b)
-
+```
 <?php
-
-for ($i= 5 ; $i >= 1 ; $i--) {
-
-for ($j= 5 ; $j >= 6 - $i; $j--) {
-
-echo $j. " ";
-
-}
-
-echo "<br>";
-
-}
-
+    for ($i=5; $i >= 1; $i--) { 
+        for ($j=5; $j >= 6-$i; $j--) { 
+            echo $j . " ";
+        }
+        echo "<br>";
+    }
 ?>
+```
 
 2. c)
-
+```
 <?php
-
-for ($i = 1 ; $i <= 9 ; $i += 2 ) {
-
-for ($j = 1 ; $j <= $i; $j += 2 ) {
-
-echo $j. " ";
-
-}
-
-echo "<br>";
-
-}
-
+    for ($i = 1; $i <= 9; $i += 2) { 
+        for ($j = 1; $j <= $i; $j += 2) { 
+            echo $j . " ";
+        }
+        echo "<br>";
+    }
 ?>
+```
 
 2. d)
-
+```
 <?php
-
-for ($i = 3 ; $i >= 1 ; $i--) {
-
-for ($j = 3 ; $j >= 4 - $i; $j--) {
-
-echo $j. " ";
-
-}
-
-echo "<br>";
-
-}
-
-for ($i = 2 ; $i <= 3 ; $i++) {
-
-for ($j = 3 ; $j >= 4 - $i; $j--) {
-
-echo $j. " ";
-
-}
-
-echo "<br>";
-
-}
-
+    for ($i = 3; $i >= 1; $i--) { 
+        for ($j = 3; $j >= 4 - $i; $j--) { 
+            echo $j . " ";
+        }
+        echo "<br>";
+    }
+    for ($i = 2; $i <= 3; $i++) { 
+        for ($j = 3; $j >= 4 - $i; $j--) { 
+            echo $j . " ";
+        }
+        echo "<br>";
+    }
 ?>
-
+```
 
 2. e)
-
+```
 <?php
+    $count = 0;
+    $num = 2;
 
-$count = 0 ;
-
-$num = 2 ;
-
-while ($count < 5 ) {
-
-$prima = true;
-
-for ($i= 2 ; $i <= sqrt($num); $i++) {
-
-if ($num % $i == 0 ) {
-
-$prima = false;
-
-break;
-
-}
-
-}
-
-if ($prima) {
-
-echo $num. " ";
-
-$count++;
-
-}
-
-$num++;
-
-}
-
+    while ($count < 5) {
+        $prima = true;
+        for ($i=2; $i <= sqrt($num); $i++) { 
+            if ($num % $i == 0) {
+                $prima = false;
+                break;
+            }
+        }
+        if ($prima) {
+            echo $num . " ";
+            $count++;
+        }
+        $num++;
+    }
 ?>
+```
 
 3. https://auliya.id/portofolio
-
 Portfolio juga saya lampirkan pada file pdf terpisah
 
 
